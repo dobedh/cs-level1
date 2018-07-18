@@ -7,16 +7,27 @@
     <title>Document</title>
 </head>
 <body>
+    <h2>사칙 연산</h2>
+    <p id='result'></p>
 
     <script>
-                            
+        var string = document.getElementById('result');
+        var p = '<h4>결과</h4>'
+        string.innerHTML = p;   
         // 문제 1
         var a = Number(prompt("숫자를 입력해주세요"));
         var b = Number(prompt("두번째 숫자를 입력하세요"));
-        document.write(a + ' + ' +  b + ' = ' +  (a + b) + '<br>')
-        document.write(a + ' - ' +  b + ' = ' +  (a - b) + '<br>')
-        document.write(a + ' * ' +  b + ' = ' +  (a * b) + '<br>')
-        document.write(a + ' / ' +  b + ' = ' +  (a /b) + '<br>')
+        var a1 = typeof a
+        var b1 = typeof b
+        if(a1 === Number && b1 === Number){
+        p += a + ' + ' +  b + ' = ' +  (a + b) + '<br><br>'
+        p += a + ' - ' +  b + ' = ' +  (a - b) + '<br><br>'
+        p += a + ' * ' +  b + ' = ' +  (a * b) + '<br><br>'
+        p += a + ' / ' +  b + ' = ' +  (a /b) + '<br><br>'
+        string.innerHTML = p;
+         } else {
+        string.innerHTML = '숫자를 넣어주세요';
+         }
     </script>
 </body>
 </html>
